@@ -34,3 +34,8 @@ coverage.cobertura.xml
 packages/
 
 .aiassistant/
+
+# Legacy local Spec Kit output
+.codex/
+.cache/
+
