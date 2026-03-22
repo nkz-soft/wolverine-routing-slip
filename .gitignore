@@ -37,4 +37,5 @@ packages/
 
 # Legacy local Spec Kit output
 .codex/
+.cache/
 
