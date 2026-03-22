@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Wolverine.RoutingSlip.Abstractions/Wolverine.RoutingSlip.Abstractions.csproj" />
+    <Project Path="src/Wolverine.RoutingSlip/Wolverine.RoutingSlip.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Wolverine.RoutingSlip.Tests/Wolverine.RoutingSlip.Tests.csproj" />
+    <Project Path="tests/Wolverine.RoutingSlip.IntegrationTests/Wolverine.RoutingSlip.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/doc/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Wolverine.RoutingSlip.Sample.Api/Wolverine.RoutingSlip.Sample.Api.csproj" />
+  </Folder>
+</Solution>

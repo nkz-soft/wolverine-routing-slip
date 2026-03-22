@@ -1,0 +1,36 @@
+# Build
+bin/
+obj/
+out/
+TestResults/
+artifacts/
+
+# User files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS / VS Code
+.idea/
+.vscode/
+*.DotSettings.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+coverage.cobertura.xml
+
+# Local env
+.env
+.env.*
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+.aiassistant/
