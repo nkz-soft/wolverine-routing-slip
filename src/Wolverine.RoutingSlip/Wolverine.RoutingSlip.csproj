@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Description>Routing slip orchestration implementation for Wolverine.</Description>
+    <Copyright>Copyright © 2026</Copyright>
+    <RepositoryUrl>https://github.com/nkz-soft/wolverine-routing-slip</RepositoryUrl>
+
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Wolverine.RoutingSlip.Abstractions/Wolverine.RoutingSlip.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WolverineFx" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+</Project>

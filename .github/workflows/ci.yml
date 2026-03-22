@@ -1,0 +1,52 @@
+name: ci 
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+          cache: true
+          cache-dependency-path: '**/packages.lock.json'
+
+      - name: Restore
+        run: dotnet restore --locked-mode 
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: Test
+        run: dotnet test -c Release --no-build --project tests/Wolverine.RoutingSlip.Tests/Wolverine.RoutingSlip.Tests.csproj --results-directory coverage -- --coverage --coverage-output-format cobertura --coverage-output coverage.cobertura.xml
+
+      - name: Generate coverage report
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.5.3
+        with:
+          reports: 'coverage/**/coverage.cobertura.xml'
+          targetdir: 'coverage/result'
+          reporttypes: 'Cobertura;MarkdownSummaryGithub'
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          recreate: true
+          path: coverage/result/SummaryGithub.md

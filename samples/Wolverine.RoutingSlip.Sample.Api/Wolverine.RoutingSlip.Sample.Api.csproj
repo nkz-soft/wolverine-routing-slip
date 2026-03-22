@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+      <Version>1.0.0</Version>
+      <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+      <IncludeGeneratedFilesInProject>true</IncludeGeneratedFilesInProject>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../../src/Wolverine.RoutingSlip/Wolverine.RoutingSlip.csproj" />
+    </ItemGroup>
+</Project>
